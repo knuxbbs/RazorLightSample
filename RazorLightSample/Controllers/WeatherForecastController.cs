@@ -22,7 +22,8 @@ namespace RazorLightSample.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IRazorLightEngine razorLightEngine)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, 
+            IRazorLightEngine razorLightEngine)
         {
             _logger = logger;
             _razorLightEngine = razorLightEngine;
@@ -31,7 +32,7 @@ namespace RazorLightSample.Controllers
         [HttpGet]
         public async Task<IEnumerable<WeatherForecast>> Get()
         {
-            var result = await _razorLightEngine.CompileRenderAsync("RazorClassLibary.MyFeature.Pages.Page1", new Page1Model());
+            var result = await _razorLightEngine.CompileRenderAsync("Areas.MyFeature.Pages.Page1", new Page1Model());
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
