@@ -22,7 +22,8 @@ namespace RazorLightSample.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IRazorLightEngine razorLightEngine)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, 
+            IRazorLightEngine razorLightEngine)
         {
             _logger = logger;
             _razorLightEngine = razorLightEngine;

@@ -28,10 +28,9 @@ namespace RazorLightSample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddRazorPages();
 
             var engine = new RazorLightEngineBuilder()
-                  .UseEmbeddedResourcesProject(typeof(Dummy)) // exception without this (or another project type)
+                  .UseEmbeddedResourcesProject(typeof(Dummy))
                   .UseMemoryCachingProvider()
                   .Build();
 
